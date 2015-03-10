@@ -41,36 +41,48 @@
 		<g:each in="${listaEmpleados}" var="empleado">
 			
 			<div class="jumbotron" style="border: 1px solid FFD700">
-				<br>
+				
 				<h2> ${empleado.nombre}&nbsp;${empleado.apellido}</h2>
 				<h4>D.N.I.: ${empleado.dni}</h4>
 				<h4> Fecha nacimiento: ${empleado.fechaNacimiento.date} / ${empleado.fechaNacimiento.month +1} / ${empleado.fechaNacimiento.year+1900}</h4>
+				
 				<g:form controller="SearchRegalo" method="post" action="index">
 					<input type="hidden" name="idEmpleado" value="${empleado.id}" />
 					<div style="float: left"><input class="btn btn-info" id="botonRegalo${empleado.id}" type="submit" value="Elegir Regalo" name="regaloOk" />&nbsp;&nbsp;</div>
 				</g:form>
+				
 				<g:form controller="EditEmpleado" method="post" action="index">
 					<input type="hidden" name="idEmpleado" value="${empleado.id}" />
 					<div style="float: left"><input class="btn btn-warning" id="botonEdit${empleado.id}" type="submit" value="Editar Empleado" name="regaloOk" />&nbsp;&nbsp;</div>
 				</g:form>
+				
 				<g:form controller="DeleteEmpleado" method="post" action="index">
 					<input type="hidden" name="idEmpleado" value="${empleado.id}" />
 					<div style="float: left"><input class="btn btn-danger" id="botonDelete${empleado.id}" type="submit" value="Eliminar Empleado" name="regaloOk" /></div>
 				</g:form>
 				<br>
-			
-			
-			<br>
+				
 			 
-			<div id="regalo-div${empleado.id}_template" style="display:none; margin-left: 520px; margin-top: -190px;">
+			<div id="regalo-div${empleado.id}_template" style="display:none; margin-left: 520px; margin-top: -170px;">
 					<p>Año: #anioCumpleEmp</p>
 					<p>#TituloRegalo</p>
 					<img src="#FotoRegalo" width="100px" height="100px" class="img-circle" />
 					<p>Precio: $#PrecioRegalo</p>
 			</div>
-			
-			<div id="regalo-div${empleado.id}" style="display:none; margin-left: 520px; margin-top: -190px;">
+			<div id="regalo-div${empleado.id}" style="display:none; margin-left: 520px; margin-top: -170px;">
 			</div>
+			
+			<div style="margin-left: 520px;">
+					<g:form controller="EditRegalo" method="post" action="index">
+						<input type="hidden" name="idEmpleado" value="${empleado.regalos.id}" />
+						<div id="divEditRegalo${empleado.id}" style="float:left; display:none;" ><input class="btn btn-warning" id="botonEditRegalo${empleado.id}" type="submit" value="Editar Regalo" name="regaloOk" />&nbsp;&nbsp;</div>
+					</g:form>
+					<g:form controller="DeleteRegalo" method="post" action="index">
+						<input type="hidden" name="idEmpleado" value="${empleado.regalos.id}" />
+						<div id="divDeleteRegalo${empleado.id}" style="float:left; display:none;"><input class="btn btn-danger" id="botonDeleteRegalo${empleado.id}" type="submit" value="Eliminar Regalo" name="regaloOk" /></div>
+					</g:form>
+			</div>
+						
 			
 			<script type="text/javascript">
 				<g:if test="${empleado.regalos.size()>0}">
@@ -86,7 +98,9 @@
 						str = str.replace("#FotoRegalo", data.pictures[0].url);
 						str = str.replace("#PrecioRegalo", data.price);
 						$("#regalo-div${empleado.id}").show();
-						$("#regalo-div${empleado.id}").append(str);	
+						$("#regalo-div${empleado.id}").append(str);
+						$("#divEditRegalo${empleado.id}").show();
+						$("#divDeleteRegalo${empleado.id}").show();
 					}
 					function mostrarError(){
 						$("#regalo-div${empleado.id}").append("Error al obtener el producto");
