@@ -20,13 +20,17 @@
     	<div class="container">
         	<div class="navbar-header">
         		<ul class="nav navbar-nav">
-        			<li class="active"><a class="navbar-brand" href="http://localhost:8080/cumples/empleados/index">Empleados</a></li>
+        			<li class="active"><a class="navbar-brand" href="#">Cambiar Regalo</a></li>
         		</ul>	
         	</div>
 
         	<div id="navbar" class="collapse navbar-collapse">
           		<ul class="nav navbar-nav">
             		<li><a href="http://localhost:8080/cumples/empleados/index">Registrar Empleado</a></li>
+            	</ul>
+            	
+            	<ul class="nav navbar-nav">
+            		<li><a href="http://localhost:8080/cumples/mostrar/index">Empleados</a></li>
           		</ul>
         	
           		<ul class="nav navbar-nav">
@@ -44,6 +48,9 @@
       <input type="search" class="form-control" style="width:85%;" id="mySearch" placeholder="Ingresa el regalo que querés hacerle." required>
       <input type="submit" class="btn btn-warning" data-loading-text="Loading..." value="Buscar Regalo" id="btnMySearch" onclick="iniciarBusqueda()" name="buscar" />
     </div> 
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
