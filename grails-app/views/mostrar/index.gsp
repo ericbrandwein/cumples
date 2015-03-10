@@ -43,24 +43,33 @@
 			<div class="jumbotron" style="border: 1px solid FFD700">
 				<br>
 				<h2> ${empleado.nombre}&nbsp;${empleado.apellido}</h2>
+				<h4>D.N.I.: ${empleado.dni}</h4>
 				<h4> Fecha nacimiento: ${empleado.fechaNacimiento.date} / ${empleado.fechaNacimiento.month +1} / ${empleado.fechaNacimiento.year+1900}</h4>
 				<g:form controller="SearchRegalo" method="post" action="index">
 					<input type="hidden" name="idEmpleado" value="${empleado.id}" />
-					<div style="float: left"><input class="btn btn-warning" id="botonRegalo${empleado.id}" type="submit" value="Elegir Regalo" name="regaloOk" /></div>
+					<div style="float: left"><input class="btn btn-info" id="botonRegalo${empleado.id}" type="submit" value="Elegir Regalo" name="regaloOk" />&nbsp;&nbsp;</div>
+				</g:form>
+				<g:form controller="EditEmpleado" method="post" action="index">
+					<input type="hidden" name="idEmpleado" value="${empleado.id}" />
+					<div style="float: left"><input class="btn btn-warning" id="botonEdit${empleado.id}" type="submit" value="Editar Empleado" name="regaloOk" />&nbsp;&nbsp;</div>
+				</g:form>
+				<g:form controller="DeleteEmpleado" method="post" action="index">
+					<input type="hidden" name="idEmpleado" value="${empleado.id}" />
+					<div style="float: left"><input class="btn btn-danger" id="botonDelete${empleado.id}" type="submit" value="Eliminar Empleado" name="regaloOk" /></div>
 				</g:form>
 				<br>
 			
 			
 			<br>
 			 
-			<div id="regalo-div${empleado.id}_template" style="display:none; margin-left: 520px; margin-top: -120px;">
+			<div id="regalo-div${empleado.id}_template" style="display:none; margin-left: 520px; margin-top: -190px;">
 					<p>Año: #anioCumpleEmp</p>
 					<p>#TituloRegalo</p>
 					<img src="#FotoRegalo" width="100px" height="100px" class="img-circle" />
 					<p>Precio: $#PrecioRegalo</p>
 			</div>
 			
-			<div id="regalo-div${empleado.id}" style="display:none; margin-left: 520px; margin-top: -120px;">
+			<div id="regalo-div${empleado.id}" style="display:none; margin-left: 520px; margin-top: -190px;">
 			</div>
 			
 			<script type="text/javascript">

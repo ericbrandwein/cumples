@@ -53,7 +53,11 @@
 				<div class="form-group">
 	    			<input type="text" name="apellido" class="form-control" placeholder="Apellido"  required>
   				</div><br><br>
-			
+  				
+				<div class="form-group">
+	    			<input type="text" name="dni" class="form-control" placeholder="DNI"  required>
+  				</div><br><br>
+				
 				<div class="form-group">
     				<label for="exampleInputName2" style="color: #050000;">Fecha de nacimiento:</label><br>
     				<div style="float: left;">
