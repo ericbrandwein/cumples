@@ -108,7 +108,7 @@
 				
 			    	<g:if test="${empleado.regalos.last().anioCumple ==(new Date().getYear()+1900)}">
 			   			 // entrandoooo
-						$("#botonRegalo${empleado.id}").attr('disabled', true);
+						$("#botonRegalo${empleado.id}").hide();
 					</g:if>
 				</g:if>
 				
