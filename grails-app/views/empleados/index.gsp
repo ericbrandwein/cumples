@@ -55,15 +55,15 @@
   				</div><br><br>
   				
 				<div class="form-group">
-	    			<input type="text" name="dni" class="form-control" placeholder="DNI"  required>
+	    			<input type="number" name="dni" class="form-control" placeholder="DNI" style=""  required>
   				</div><br><br>
 				
 				<div class="form-group">
     				<label for="exampleInputName2" style="color: #050000;">Fecha de nacimiento:</label><br>
-    				<div style="float: left;">
-    				<input type="text" style="width: 55px;" name="dia"  class="form-control" placeholder="Día" required/>
-					<input type="text" style="width: 55px;" name="mes" class="form-control" placeholder="Mes" required/>
-					<input type="text" style="width: 90px;" name="anio" class="form-control" placeholder="Año" required/>
+    				<div style="float: left; width: 250px; margin-left: -20px;">
+    				<input type="number" min="1" max="31" style="width: 65px;" name="dia"  class="form-control" placeholder="Día" required/>
+					<input type="number" min="1" max="12" style="width: 75px;" name="mes" class="form-control" placeholder="Mes" required/>
+					<input type="number" min="1900" max="2000" style="width: 90px;" name="anio" class="form-control" placeholder="Año" required/>
 				</div>
 				
   		</div><br><br>

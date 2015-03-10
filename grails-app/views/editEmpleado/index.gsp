@@ -62,16 +62,16 @@
   				</div><br><br>
   				
 				<div class="form-group">
-	    			<input type="text" name="dni" class="form-control" value="${dni}"  required>
+	    			<input type="number" name="dni" class="form-control" value="${dni}"  required>
 	    			<input type="hidden" name="idEmpleado" value="${idEdEmp}" >
   				</div><br><br>
 				
 				<div class="form-group">
     				<label for="exampleInputName2" style="color: #050000;">Fecha de nacimiento:</label><br>
     				<div style="float: left;">
-    				<input type="text" style="width: 55px;" name="dia"  class="form-control" value="${dia}" required/>
-					<input type="text" style="width: 55px;" name="mes" class="form-control" value="${mes}" required/>
-					<input type="text" style="width: 90px;" name="anio" class="form-control" value="${anio}" required/>
+    				<input type="number" min="1" max="31" style="width: 55px;" name="dia"  class="form-control" value="${dia}" required/>
+					<input type="number" min="1" max="12" style="width: 55px;" name="mes" class="form-control" value="${mes}" required/>
+					<input type="number" min="1900" max="2000" style="width: 90px;" name="anio" class="form-control" value="${anio}" required/>
 				</div>
 				
   		</div><br><br>
