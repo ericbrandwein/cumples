@@ -74,11 +74,11 @@
 			
 			<div style="margin-left: 520px;">
 					<g:form controller="EditRegalo" method="post" action="index">
-						<input type="hidden" name="idEmpleado" value="${empleado.regalos.id}" />
+						<input type="hidden" name="idRegalo" value="${empleado.regalos.last().id}" />
 						<div id="divEditRegalo${empleado.id}" style="float:left; display:none;" ><input class="btn btn-warning" id="botonEditRegalo${empleado.id}" type="submit" value="Editar Regalo" name="regaloOk" />&nbsp;&nbsp;</div>
 					</g:form>
 					<g:form controller="DeleteRegalo" method="post" action="index">
-						<input type="hidden" name="idEmpleado" value="${empleado.regalos.id}" />
+						<input type="hidden" name="idRegalo" value="${empleado.regalos.last().id}" />
 						<div id="divDeleteRegalo${empleado.id}" style="float:left; display:none;"><input class="btn btn-danger" id="botonDeleteRegalo${empleado.id}" type="submit" value="Eliminar Regalo" name="regaloOk" /></div>
 					</g:form>
 			</div>

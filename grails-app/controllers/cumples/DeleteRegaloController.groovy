@@ -2,5 +2,7 @@ package cumples
 
 class DeleteRegaloController {
 
-    def index() { }
+    def index() {
+				
+	}
 }
