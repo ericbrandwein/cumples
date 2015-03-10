@@ -67,12 +67,12 @@
 					<p>Año: #anioCumpleEmp</p>
 					<p>#TituloRegalo</p>
 					<img src="#FotoRegalo" width="100px" height="100px" class="img-circle" />
-					<p>Precio: $#PrecioRegalo</p>
 			</div>
 			<div id="regalo-div${empleado.id}" style="display:none; margin-left: 520px; margin-top: -170px;">
 			</div>
-			
+			<br>
 			<div style="margin-left: 520px;">
+				<g:if test="${empleado.regalos.size()>0 }">
 					<g:form controller="EditRegalo" method="post" action="index">
 						<input type="hidden" name="idRegalo" value="${empleado.regalos.last().id}" />
 						<div id="divEditRegalo${empleado.id}" style="float:left; display:none;" ><input class="btn btn-warning" id="botonEditRegalo${empleado.id}" type="submit" value="Editar Regalo" name="regaloOk" />&nbsp;&nbsp;</div>
@@ -81,6 +81,7 @@
 						<input type="hidden" name="idRegalo" value="${empleado.regalos.last().id}" />
 						<div id="divDeleteRegalo${empleado.id}" style="float:left; display:none;"><input class="btn btn-danger" id="botonDeleteRegalo${empleado.id}" type="submit" value="Eliminar Regalo" name="regaloOk" /></div>
 					</g:form>
+				</g:if>	
 			</div>
 						
 			
@@ -96,7 +97,6 @@
 						str = str.replace("#anioCumpleEmp", ${empleado.regalos.last().anioCumple});
 						str = str.replace("#TituloRegalo", data.title);
 						str = str.replace("#FotoRegalo", data.pictures[0].url);
-						str = str.replace("#PrecioRegalo", data.price);
 						$("#regalo-div${empleado.id}").show();
 						$("#regalo-div${empleado.id}").append(str);
 						$("#divEditRegalo${empleado.id}").show();
