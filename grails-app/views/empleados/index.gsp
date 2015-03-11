@@ -78,6 +78,12 @@
 						<div><input type="submit"  class="btn btn-warning" value="Agregar Empleado" name="ok" onClick="validarDatos()" /></div>
 					</div>
 				</form>
+				<g:if test="${flash.message=='error'}">
+					<h3 style="text-align:center; color: #000;" class="lead"><span class="label label-danger" style="margin-left: -25%;">Ya hay un empleado registrado con ese DNI.</span></h3>
+				</g:if>
+				<g:if test="${flash.message=='success'}">
+					<h3 style="text-align:center; color: #000;" class="lead"><span class="label label-success" style="margin-left: -15%;">Empleado registrado correctamente.</span></h3>
+				</g:if>
 			</div>
 		</div>
 	</body>

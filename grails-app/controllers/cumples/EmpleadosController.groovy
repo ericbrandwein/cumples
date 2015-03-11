@@ -17,9 +17,11 @@ class EmpleadosController {
 		
 			Empleado e1= new Empleado(nombre: nombre, apellido: apellido, dni: dni, fechaNacimiento: Date.parse("dd-MM-yyyy", dia+"-"+mes+"-"+anio));
 			e1.save(failOnError:true);
+			flash.message="success";
 			redirect(action:'index');
 		}
 		else{
+			flash.message="error";
 			redirect(action:'index');
 		}
 		
