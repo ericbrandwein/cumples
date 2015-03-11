@@ -44,45 +44,20 @@
 						<h2> ${empleado.nombre}&nbsp;${empleado.apellido}</h2>
 						<h4>D.N.I.: ${empleado.dni}</h4>
 						<h4> Fecha nacimiento: ${empleado.fechaNacimiento.date} / ${empleado.fechaNacimiento.month +1} / ${empleado.fechaNacimiento.year+1900}</h4>
-				
 						<g:form controller="SearchRegalo" method="post" action="index">
-							<input type="hidden" name="idEmpleado" value="${empleado.id}" />
-							<div style="float: left"><input class="btn btn-info" id="botonRegalo${empleado.id}" type="submit" value="Elegir Regalo" name="regaloOk" />&nbsp;&nbsp;</div>
-						</g:form>
-				
-						<g:form controller="EditEmpleado" method="post" action="index">
-							<input type="hidden" name="idEmpleado" value="${empleado.id}" />
-							<div style="float: left"><input class="btn btn-warning" id="botonEdit${empleado.id}" type="submit" value="Editar Empleado" name="regaloOk" />&nbsp;&nbsp;</div>
-						</g:form>
-				
-						<g:form controller="DeleteEmpleado" method="post" action="index">
-							<input type="hidden" name="idEmpleado" value="${empleado.id}" />
-							<div style="float: left"><input class="btn btn-danger" id="botonDelete${empleado.id}" type="submit" value="Eliminar Empleado" name="regaloOk" /></div>
-						</g:form>
-				<br>
+						<input type="hidden" name="idEmpleado" value="${empleado.id}" />
+						<div style="float: left">
+							<input class="btn btn-info" id="botonRegalo${empleado.id}" type="submit" value="Elegir Regalo" name="regaloOk" />&nbsp;&nbsp;
+						</div>
+					</g:form>
 			 
 						<div id="regalo-div${empleado.id}_template" style="display:none; margin-left: 520px; margin-top: -170px;">
 							<p>Año: #anioCumpleEmp</p>
 							<p>#TituloRegalo</p>
 							<img src="#FotoRegalo" width="100px" height="100px" class="img-circle" />
 						</div>
-						<div id="regalo-div${empleado.id}" style="display:none; margin-left: 520px; margin-top: -170px;">
-						</div>
-				<br>
-						<div style="margin-left: 520px;">
-							<g:if test="${empleado.regalos.size()>0 }">
-								<g:form controller="EditRegalo" method="post" action="index">
-									<input type="hidden" name="idRegalo" value="${empleado.regalos.last().id}" />
-									<div id="divEditRegalo${empleado.id}" style="float:left; display:none;" ><input class="btn btn-warning" id="botonEditRegalo${empleado.id}" type="submit" value="Editar Regalo" name="regaloOk" />&nbsp;&nbsp;</div>
-								</g:form>
-								<g:form controller="DeleteRegalo" method="post" action="index">
-									<input type="hidden" name="idRegalo" value="${empleado.regalos.last().id}" />
-									<div id="divDeleteRegalo${empleado.id}" style="float:left; display:none;"><input class="btn btn-danger" id="botonDeleteRegalo${empleado.id}" type="submit" value="Eliminar Regalo" name="regaloOk" /></div>
-								</g:form>
-							</g:if>	
-						</div>
-						
-			
+						<div id="regalo-div${empleado.id}" style="display:none; margin-left: 520px; margin-top: -155px; margin-bottom: -50px;">
+						</div><br>
 						<script type="text/javascript">
 							<g:if test="${empleado.regalos.size()>0}">
 								var idRegalo="${empleado.regalos.last().urlRegalo}";
