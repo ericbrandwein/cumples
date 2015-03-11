@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ABM Empleados</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	</head>
+
+	<body class="container" style="width: 60%;">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nombre</th><th>Apellido</th><th>Cumplea&ntilde;os</th><th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody id="empleadoList">
+				<!-- Agregar aquí empleados -->
+			</tbody>
+		</table>
+
+		<form id="formCreate">
+			<div class="form-group">
+				<label>Nombre</label>
+				<input class="form-control" type="text" name="nombre" id="txtnombre" />
+			</div>
+			
+			<div class="form-group">
+				<label>Apellido</label>
+				<input class="form-control" type="text" name="apellido" id="txtapellido" />
+			</div>
+
+			<div class="form-group">
+				<label>Nacimiento</label>
+				<input class="form-control" type="text" name="nacimiento" id="txtnacimiento" />
+			</div>
+			
+			<input type="hidden" name="id" id="txtidEmpleado" />
+			<button type="button" class="btn btn-primary" id="btnCrearModificar">Crear empleado</button>
+			<button type="button" class="btn btn-primary" id="btnCancelar">Cancelar</button>
+		</form>
+	</body>
+</html>

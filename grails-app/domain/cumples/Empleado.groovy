@@ -1,6 +1,6 @@
 package cumples
 import grails.rest.Resource
-@Resource(uri= "/avmEmpleados")
+@Resource(uri= "/empleadosLista")
 
 	class Empleado {
 	String nombre;
