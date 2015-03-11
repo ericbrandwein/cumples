@@ -11,10 +11,8 @@
 		<title>Envio mail</title>
 	</head>
 	
-
 	<body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
       		<div class="container">
         		<div class="navbar-header">
           			<ul class="nav navbar-nav">
@@ -29,13 +27,10 @@
           			</ul>
           		</div>
       		</div>
-    	</nav>
-    <br>
-    <br>
-    <br>
-    
-    		
-
-    <div style="text-align:center"><h1><span class="label label-success">El reporte se ha enviado correctamente por mail</span></h1></div>
-    </body>
-    </html>
+    	</nav><br><br><br>
+    	
+    	<div style="text-align:center">
+    		<h1><span class="label label-success">El reporte se ha enviado correctamente por mail</span></h1>
+    	</div>
+	</body>
+</html>
