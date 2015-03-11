@@ -13,120 +13,101 @@
 	
 
 	<body>
-
-	<div class="row"></div>
+		<div class="row"></div>
 		<div class = "col-md-offset-2 col-md-8">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-    	<div class="container">
-        	<div class="navbar-header">
-        		<ul class="nav navbar-nav">
-        			<li class="active"><a class="navbar-brand" href="#">Cambiar Regalo</a></li>
-        		</ul>	
-        	</div>
-
-        	<div id="navbar" class="collapse navbar-collapse">
-          		<ul class="nav navbar-nav">
-            		<li><a href="http://localhost:8080/cumples/empleados/index">Registrar Empleado</a></li>
-            	</ul>
-            	
-            	<ul class="nav navbar-nav">
-            		<li><a href="http://localhost:8080/cumples/mostrar/index">Empleados</a></li>
-          		</ul>
-        	
-          		<ul class="nav navbar-nav">
-            		<li><a href="http://localhost:8080/cumples/envioMail/index">Verificar Precios</a></li>
-          		</ul>
-          	</div>
-      	</div>
-    </nav>
-    <br>
-    <br>
-    <br>
-    </div>
-    
-      	 <div class="form-inline" style="width:100%; margin-left:2%; float:left;">
-      <input type="search" class="form-control" style="width:85%;" id="mySearch" placeholder="Ingresa el regalo que querés hacerle." required>
-      <input type="submit" class="btn btn-warning" data-loading-text="Loading..." value="Buscar Regalo" id="btnMySearch" onclick="iniciarBusqueda()" name="buscar" />
-    </div> 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <script type="text/javascript">
-    $("#mySearch").keyup(function(event){
-            if(event.keyCode == 13){
-                $("#btnMySearch").click();
+    		<nav class="navbar navbar-inverse navbar-fixed-top">
+    		<div class="container">
+        		<div class="navbar-header">
+        			<ul class="nav navbar-nav">
+        				<li class="active"><a class="navbar-brand" href="#">Cambiar Regalo</a></li>
+        			</ul>	
+        		</div>
+        		
+        		<div id="navbar" class="collapse navbar-collapse">
+          			<ul class="nav navbar-nav">
+            			<li><a href="http://localhost:8080/cumples/empleados/index">Registrar Empleado</a></li>
+            		</ul>
+            		<ul class="nav navbar-nav">
+            			<li><a href="http://localhost:8080/cumples/mostrar/index">Empleados</a></li>
+          			</ul>
+          			<ul class="nav navbar-nav">
+            			<li><a href="http://localhost:8080/cumples/envioMail/index">Verificar Precios</a></li>
+          			</ul>
+          		</div>
+      		</div>
+    		</nav><br><br><br>
+    	</div>
+    	
+    	<div class="form-inline" style="width:100%; margin-left:2%; float:left;">
+    		<input type="search" class="form-control" style="width:85%;" id="mySearch" placeholder="Ingresa el regalo que querés hacerle." required>
+    		<input type="submit" class="btn btn-warning" data-loading-text="Loading..." value="Buscar Regalo" id="btnMySearch" onclick="iniciarBusqueda()" name="buscar" />
+    	</div><br><br><br><br><br><br>
+    	
+    	<script type="text/javascript">
+    	$("#mySearch").keyup(function(event){
+        	if(event.keyCode == 13){
+            	$("#btnMySearch").click();
             }
-    });
-    </script>
-	
-	<div id="respuesta_api_template" style="display:none;">
-			<div class="jumbotron">
+         });
+        </script>
+        
+        <div id="respuesta_api_template" style="display:none;">
+        	<div class="jumbotron">
+        		<p style="text-align:center;">#TituloProd</p>
+        		<img src="#Imagen" style="margin-left:342px;" class="img-circle"/>
+        		<p style="text-align:center;">$ #PrecioProd</p>
+        		<form method="post" action="editarRegaloC">
+        			<input type="hidden" name="idEmpleado" value="#idEmpleado" >
+        			<input type="hidden" name="idRegalo" value="#idRegalo" >
+        			<input type="hidden" name="anioCumple" value="#AnioActual">
+        			<input type="hidden" name="urlRegalo" value="#urlReg">
+        			<input type="submit" class="btn btn-warning" value="Asignar Regalo" name="asignar" style="margin-left:326px;" />
+        		</form>
+    		</div><br>
+		</div>
+
+    	<div id="respuesta_api" style="display:none; width:60%; margin-left:260px;">
 			<p style="text-align:center;">#TituloProd</p>
 			<img src="#Imagen" style="margin-left:342px;" class="img-circle"/>
-			<p style="text-align:center;">$ #PrecioProd</p>
+			<p style="text-align:center;">#PrecioProd</p>
 			<form method="post" action="editarRegaloC">
     			<input type="hidden" name="idEmpleado" value="#idEmpleado" >
     			<input type="hidden" name="idRegalo" value="#idRegalo" >
     			<input type="hidden" name="anioCumple" value="#AnioActual">
     			<input type="hidden" name="urlRegalo" value="#urlReg">
     			<input type="submit" class="btn btn-warning" value="Asignar Regalo" name="asignar" style="margin-left:326px;" />
-    		</form>
-    	</div>
-    	<br>
-	</div>
-
-    <div id="respuesta_api" style="display:none; width:60%; margin-left:260px;">
-		<p style="text-align:center;">#TituloProd</p>
-		<img src="#Imagen" style="margin-left:342px;" class="img-circle"/>
-		<p style="text-align:center;">#PrecioProd</p>
-		<form method="post" action="editarRegaloC">
-    		<input type="hidden" name="idEmpleado" value="#idEmpleado" >
-    		<input type="hidden" name="idRegalo" value="#idRegalo" >
-    		<input type="hidden" name="anioCumple" value="#AnioActual">
-    		<input type="hidden" name="urlRegalo" value="#urlReg">
-    		<input type="submit" class="btn btn-warning" value="Asignar Regalo" name="asignar" style="margin-left:326px;" />
-    	</form>
-    	<br>
-	</div>
+    		</form><br>
+		</div>
 	
-    <script type="text/javascript">
+    	<script type="text/javascript">
+    		function iniciarBusqueda(){
+        		var busqueda = $("#mySearch").val();
+        		var promise = $.get("https://api.mercadolibre.com/sites/MLA/search", { q: busqueda, offset: 2 });
+        		$("#respuesta_api").html("");
+        		promise.done( mostrarResultado );
+        		promise.fail( mostrarError );
+        	}
+        	function mostrarResultado( data ){
+           		$.each( data.results, agregarResultado )
+        	}
 
-      function iniciarBusqueda(){
-        var busqueda = $("#mySearch").val();
-        var promise = $.get("https://api.mercadolibre.com/sites/MLA/search", { q: busqueda, offset: 2 });
-        $("#respuesta_api").html("");
-        promise.done( mostrarResultado );
-        promise.fail( mostrarError );
-      }
-    
-      function mostrarResultado( data ) {
-        $.each( data.results, agregarResultado )
-      }
+      		function agregarResultado(index, item) {
+        		var str=$("#respuesta_api_template").html();
+        		$("#spanLoading").attr('display', 'block' );
+        		str = str.replace("#TituloProd", item.title);
+        		str = str.replace("#Imagen", item.thumbnail);
+        		str = str.replace("#PrecioProd", item.price);
+        		str = str.replace("#idRegalo", ${idRegalo});
+        		str = str.replace("#idEmpleado", ${EmpleadoReg});
+        		str = str.replace("#AnioActual", (new Date().getYear() + 1900));
+        		str = str.replace("#urlReg", item.id);
+        		$("#respuesta_api").show();
+        		$("#respuesta_api").append(str);
+        	}
 
-      function agregarResultado(index, item) {
-        var str=$("#respuesta_api_template").html();
-        $("#spanLoading").attr('display', 'block' );
-        str = str.replace("#TituloProd", item.title);
-        str = str.replace("#Imagen", item.thumbnail);
-        str = str.replace("#PrecioProd", item.price);
-        str = str.replace("#idRegalo", ${idRegalo});
-        str = str.replace("#idEmpleado", ${EmpleadoReg});
-        str = str.replace("#AnioActual", (new Date().getYear() + 1900));
-        str = str.replace("#urlReg", item.id);
-        $("#respuesta_api").show();
-        $("#respuesta_api").append(str);
-        
-      }
-      
-      function mostrarError() {
-        $("#respuesta_api").html( "<li>Se produjo un error</li>" );
-      } 
-    </script>
-      	
-    
-    
-		</body>	
+        	function mostrarError() {
+            	$("#respuesta_api").html( "<li>Se produjo un error</li>" );
+            } 
+    	</script>
+	</body>	
 </html>

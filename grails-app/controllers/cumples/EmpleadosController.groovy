@@ -20,7 +20,7 @@ class EmpleadosController {
 			redirect(action:'index');
 		}
 		else{
-			
+			redirect(action:'index');
 		}
 		
 	}
