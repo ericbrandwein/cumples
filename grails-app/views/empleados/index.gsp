@@ -47,32 +47,45 @@
 		<div class="container" style="width:30%">
 			<form class="form-inline" method="post" action="agregarC">
  				<div class="form-group">
-    				<input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+    				<input type="text" name="nombre" id="txtNombre" class="form-control" onKeyUp="chText()" onKeyDown="chText()" placeholder="Nombre" required>
   				</div><br><br>
 	
 				<div class="form-group">
-	    			<input type="text" name="apellido" class="form-control" placeholder="Apellido"  required>
+	    			<input type="text" name="apellido" id="txtApellido" class="form-control" onKeyUp="chText()2" onKeyDown="chText()2" placeholder="Apellido"  required>
   				</div><br><br>
+  				<script type="text/javascript">
+					function chText(){
+    					var str=document.getElementById("txtNombre");
+    					var regex=/[^a-z]/gi;
+    					str.value=str.value.replace(regex ,"");
+					}
+					function chText2(){
+    					var str=document.getElementById("txtApellido");
+    					var regex=/[^a-z]/gi;
+    					str.value=str.value.replace(regex ,"");
+					}
+				</script>
   				
 				<div class="form-group">
-	    			<input type="number" name="dni" class="form-control" placeholder="DNI" style=""  required>
+	    			<input type="number" min="20000000" max="50000000" name="dni" id="txtDNI" class="form-control" placeholder="DNI"  required>
   				</div><br><br>
 				
 				<div class="form-group">
     				<label for="exampleInputName2" style="color: #050000;">Fecha de nacimiento:</label><br>
     				<div style="float: left; width: 250px; margin-left: -20px;">
-    				<input type="number" min="1" max="31" style="width: 65px;" name="dia"  class="form-control" placeholder="Día" required/>
-					<input type="number" min="1" max="12" style="width: 75px;" name="mes" class="form-control" placeholder="Mes" required/>
-					<input type="number" min="1900" max="2000" style="width: 90px;" name="anio" class="form-control" placeholder="Año" required/>
+    				<input type="number" min="1" max="31" style="width: 65px;" id="txtDia" name="dia"  class="form-control" placeholder="Día" required/>
+					<input type="number" min="1" max="12" style="width: 75px;" id="txtMes" name="mes" class="form-control" placeholder="Mes" required/>
+					<input type="number" min="1900" max="2000" style="width: 90px;" id="txtAnio" name="anio" class="form-control" placeholder="Año" required/>
 				</div>
 				
   		</div><br><br>
 	
 				<div class="container" style="width:85%">
-					<div><input type="submit"  class="btn btn-warning" value="Agregar Empleado" name="ok" /></div>
+					<div><input type="submit"  class="btn btn-warning" value="Agregar Empleado" name="ok" onClick="validarDatos()" /></div>
 				</div>
 			</form>
 		</div>
 </div>
+
 </body>
 </html>
