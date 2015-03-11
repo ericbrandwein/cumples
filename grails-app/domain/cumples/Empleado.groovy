@@ -8,5 +8,6 @@ import grails.rest.Resource
 	String dni;
 	Date fechaNacimiento;
 	
+	
 	static hasMany=[regalos: Regalo];
 }
