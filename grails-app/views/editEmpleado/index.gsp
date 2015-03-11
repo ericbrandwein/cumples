@@ -36,7 +36,7 @@
     		</nav><br><br><br>
     			
         	<div class="starter-template">
-        		<h1 style="text-align:center; color: #000;">Edite los datos del empleado</h1>
+        		<h1 style="text-align:center; color: #000;"><span class="label label-success">Edite los datos del empleado</span></h1>
         	</div><br>
         	
         	<div class="container" style="width:30%">

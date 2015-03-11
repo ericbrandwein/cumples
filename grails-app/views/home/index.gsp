@@ -33,7 +33,10 @@
       			</div>
     		</nav>
  		</div><br><br>
- 		
+ 			<div class="starter-template">
+        		<h1 style="text-align:center; color: #000;"> <span class="label label-success">Cumpleaños del día</span></h1>
+        		<h3 style="text-align:center; color: #000;" class="lead"> </h3>
+      		</div><br>
 		<div class="container" style="width:85%;">
 			<g:each in="${listaEmpleados}"  var="empleado"> 
 				<g:if test="${(empleado.fechaNacimiento).getDate()== (new Date()).getDate()}">

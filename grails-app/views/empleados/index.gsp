@@ -35,8 +35,8 @@
     		</nav><br><br>
     		
     		<div class="starter-template">
-        		<h1 style="text-align:center; color: #000;">Registre un empleado</h1>
-        		<h3 style="text-align:center; color: #000;" class="lead"> Ingresa nombre, apellido y fecha de nacimiento del nuevo empleado.</h3>
+        		<h1 style="text-align:center; color: #000;"><span class="label label-success">Registre un empleado</span></h1>
+        		<h3 style="text-align:center; color: #000;" class="lead"><span class="label label-success">Ingresa nombre, apellido y fecha de nacimiento del nuevo empleado.</span></h3>
       		</div><br>
       		
       		<div class="container" style="width:30%">
