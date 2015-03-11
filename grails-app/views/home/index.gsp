@@ -14,26 +14,26 @@
 	<body>
 	<div class="row"></div>
 		<div class = "col-md-offset-2 col-md-8">
-		
-    		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
       			<div class="container">
         			<div class="navbar-header">
           				<ul class="nav navbar-nav">
-          					<li class="active"><a class="navbar-brand" href="http://localhost:8080/cumples/empleados/index">Registrar Empleados</a></li>
+          					<li class="active"><a class="navbar-brand" href="http://localhost:8080/cumples/home/index">Home</a></li>
           				</ul>
         			</div>
         		
         			<div id="navbar" class="collapse navbar-collapse">  	
           				<ul class="nav navbar-nav">
           					<li><a href="http://localhost:8080/cumples/mostrar/index">Empleados</a></li>
-            				<li><a href="http://localhost:8080/cumples/envioMail/index">Verificar Precios</a></li>
+            				<li><a href="http://localhost:8080/cumples/envioMail/index">Verificar precios</a></li>
           				</ul>
+          				 <ul class="nav navbar-nav navbar-right">
+          				 <li> <a href="http://localhost:8080/cumples/empleados/index">Registrar empleados</a> </li></ul>
           			</div>
       			</div>
     		</nav>
- 		</div>
-	<br>
-	<br>
+ 		</div><br><br>
+ 		
 		<div class="container" style="width:85%;">
 			<g:each in="${listaEmpleados}"  var="empleado"> 
 				<g:if test="${(empleado.fechaNacimiento).getDate()== (new Date()).getDate()}">

@@ -16,25 +16,22 @@
 		<div class="row"></div>
 		<div class = "col-md-offset-2 col-md-8">
     		<nav class="navbar navbar-inverse navbar-fixed-top">
-    		<div class="container">
-        		<div class="navbar-header">
-        			<ul class="nav navbar-nav">
-        				<li class="active"><a class="navbar-brand" href="#">Cambiar Regalo</a></li>
-        			</ul>	
-        		</div>
+      			<div class="container">
+        			<div class="navbar-header">
+          				<ul class="nav navbar-nav">
+          					<li><a href="http://localhost:8080/cumples/home/index">Home</a></li>
+          				</ul>
+        			</div>
         		
-        		<div id="navbar" class="collapse navbar-collapse">
-          			<ul class="nav navbar-nav">
-            			<li><a href="http://localhost:8080/cumples/empleados/index">Registrar Empleado</a></li>
-            		</ul>
-            		<ul class="nav navbar-nav">
-            			<li><a href="http://localhost:8080/cumples/mostrar/index">Empleados</a></li>
-          			</ul>
-          			<ul class="nav navbar-nav">
-            			<li><a href="http://localhost:8080/cumples/envioMail/index">Verificar Precios</a></li>
-          			</ul>
-          		</div>
-      		</div>
+        			<div id="navbar" class="collapse navbar-collapse">  	
+          				<ul class="nav navbar-nav">
+          					<li><a href="http://localhost:8080/cumples/mostrar/index">Empleados</a></li>
+            				<li><a href="http://localhost:8080/cumples/envioMail/index">Verificar precios</a></li>
+          				</ul>
+          				 <ul class="nav navbar-nav navbar-right">
+          				 <li><a href="http://localhost:8080/cumples/empleados/index">Registrar empleados</a> </li></ul>
+          			</div>
+      			</div>
     		</nav><br><br><br>
     	</div>
     	
