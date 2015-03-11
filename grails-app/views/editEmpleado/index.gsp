@@ -49,7 +49,7 @@
   					</div><br><br>
   				
 					<div class="form-group">
-    					<input type="number" name="dni" class="form-control" value="${dni}"  required>
+    					<input type="number" name="dni" class="form-control" value="${dni}" style="width:198px;" disabled required>
     					<input type="hidden" name="idEmpleado" value="${idEdEmp}" >
  					</div><br><br>
 				

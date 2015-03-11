@@ -63,7 +63,7 @@
 					</script>
 					
 					<div class="form-group">
-	    				<input type="number" min="20000000" max="50000000" name="dni" id="txtDNI" class="form-control" placeholder="DNI"  required>
+	    				<input type="number" min="20000000" max="50000000" name="dni" id="txtDNI" class="form-control" placeholder="DNI" style="width: 198px;"  required>
   					</div><br><br>
   					
   					<div class="form-group">
