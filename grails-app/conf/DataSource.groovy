@@ -15,7 +15,7 @@ environments {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost/proyecto1?useUnicode=yes&characterEncoding=UTF-8"
             username = "root"
-            password = ""
+            password = "root"
         }
     }
     test {
