@@ -45,14 +45,14 @@
 						</div>
 					</g:form>
 				
-					<g:form controller="EditEmpleado" method="post" action="index">
+					<g:form controller="Edit" method="post" action="indexEmp">
 						<input type="hidden" name="idEmpleado" value="${empleado.id}" />
 						<div style="float: left">
 							<input class="btn btn-warning" id="botonEdit${empleado.id}" type="submit" value="Editar Empleado" name="regaloOk" />&nbsp;&nbsp;
 						</div>
 					</g:form>
 				
-					<g:form controller="DeleteEmpleado" method="post" action="index">
+					<g:form controller="Delete" method="post" action="deleteEmpleado">
 						<input type="hidden" name="idEmpleado" value="${empleado.id}" />
 						<div style="float: left">
 							<input class="btn btn-danger" id="botonDelete${empleado.id}" type="submit" value="Eliminar Empleado" name="regaloOk" />
@@ -69,14 +69,14 @@
 					
 					<div style="margin-left: 520px;">
 					<g:if test="${empleado.regalos.size()>0 }">
-						<g:form controller="EditRegalo" method="post" action="index">
+						<g:form controller="Edit" method="post" action="indexReg">
 							<input type="hidden" name="idRegalo" value="${empleado.regalos.last().id}" />
 							<div id="divEditRegalo${empleado.id}" style="float:left; display:none;" >
 								<input class="btn btn-warning" id="botonEditRegalo${empleado.id}" type="submit" value="Editar Regalo" name="regaloOk" />&nbsp;&nbsp;
 							</div>
 						</g:form>
 					
-						<g:form controller="DeleteRegalo" method="post" action="index">
+						<g:form controller="Delete" method="post" action="deleteRegalo">
 							<input type="hidden" name="idRegalo" value="${empleado.regalos.last().id}" />
 							<div id="divDeleteRegalo${empleado.id}" style="float:left; display:none;">
 								<input class="btn btn-danger" id="botonDeleteRegalo${empleado.id}" type="submit" value="Eliminar Regalo" name="regaloOk" />
