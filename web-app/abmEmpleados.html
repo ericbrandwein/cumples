@@ -10,7 +10,7 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>Nombre</th><th>Apellido</th><th>Cumplea&ntilde;os</th><th>Acciones</th>
+					<th>Nombre</th><th>Apellido</th><th>DNI</th><th>Cumplea&ntilde;os</th><th>Acciones</th>
 				</tr>
 			</thead>
 			<tbody id="empleadoList">
@@ -28,6 +28,11 @@
 				<label>Apellido</label>
 				<input class="form-control" type="text" name="apellido" id="txtapellido" />
 			</div>
+			
+			<div class="form-group">
+				<label>DNI</label>
+				<input class="form-control" type="text" name="dni" id="txtdni" />
+			</div>
 
 			<div class="form-group">
 				<label>Nacimiento</label>
@@ -38,5 +43,120 @@
 			<button type="button" class="btn btn-primary" id="btnCrearModificar">Crear empleado</button>
 			<button type="button" class="btn btn-primary" id="btnCancelar">Cancelar</button>
 		</form>
+		
+		<script type="text/template" id="rowTemplate">
+			<tr id="row#id">
+				<td>#nombre</td>
+				<td>#apellido</td>
+				<td>#dni</td>
+				<td>#cumpleanos</td>
+				<td>
+					<a onclick="borrar_empleado(#id)"><span class="glyphicon glyphicon-remove"></span></a>
+					<a onclick="recuperar_empleado(#id)"><span class="glyphicon glyphicon-edit"></span></a>
+				</td>
+			</tr>
+		</script>
+		<script>
+			function agregar_empleado_tabla(index, empleado){
+				var str = $("#rowTemplate").html();
+				str = str.replace("#nombre", empleado.nombre);
+				str = str.replace("#apellido", empleado.apellido);
+				str = str.replace("#dni", empleado.dni);
+				str = str.replace("#cumpleanos", empleado.fechaNacimiento);
+				// Notar que como queremos reemplazar varias veces el texto #id (se usa en al menos dos lugares)
+				// tenemos que hacerlo como un "regular expression", donde la g final significa reemplazar todas
+				// las veces. De lo contrario sólo se reemplazará la primera ocurrencia
+				str = str.replace(/#id/g, empleado.id);
+				$("#empleadoList").append(str);
+			}
+			
+			function eliminar_empleado_tabla(idEmp){
+				$("#row"+idEmp).remove();
+			}
+			
+			function cargar_formulario(data){
+				// Colocamos en los input de formulario los datos del empleado
+				$("#txtnombre").val( data.nombre );
+				$("#txtapellido").val( data.apellido );
+				$("#txtdni").val( data.dni );
+				$("#txtnacimiento").val( data.fechaNacimiento );
+				$("#txtidEmpleado").val( data.id );
+
+				// Cambiamos el texto del boton Crear a Modificar
+				$("#btnCrearModificar").html("Modificar empleado")
+			}
+			
+			function limpiar_formulario() {
+				$("#txtnombre").val("");
+				$("#txtapellido").val("");
+				$("#txtdni").val("");
+				$("#txtnacimiento").val("");
+				$("#txtidEmpleado").val("");
+
+				$("#btnCrearModificar").html("Crear empleado")
+			}
+			
+			function cargar_tabla_empleados() {
+				$.get("empleadosLista.json")
+					.done( function(data) {
+						$("#empleadoList").empty();
+						$.each(data, agregar_empleado_tabla);
+					});
+			}
+			
+			function crear_empleado(json){
+				var promise = $.ajax("empleadosLista.json", {
+						method: "POST",
+						contentType: "application/json; charset=utf-8",
+						data: JSON.stringify(json),
+				});
+				promise.done(function(empleado){
+					agregar_empleado_tabla(0,empleado);
+					limpiar_formulario();
+				});
+			}
+			
+			function recuperar_empleado(idEmp){
+				var promise = $.ajax("empleadosLista/"+idEmp+".json", { method: 'GET'});
+				promise.done(cargar_formulario);
+			}
+			
+			function borrar_empleado(idEmp){
+				var promise = $.ajax("empleadosLista/"+idEmp+".json", {method: 'DELETE'});
+				promise.done(function(){
+					eliminar_empleado_tabla(idEmp);
+				})
+			}
+			
+			function modificar_empleado(idEmp, json){
+				var promise = $.ajax("empleadosLista/"+idEmp+".json", {
+						method: "PUT",
+						contentType: "application/json; charset=utf-8",
+						data: JSON.stringify(json),
+				});
+				promise.done(function(empleado){
+					eliminar_empleado_tabla(empleado.id);
+					agregar_empleado_tabla(0, empleado);
+					limpiar_formulario();
+				})
+			}
+			
+			$("#btnCancelar").click(limpiar_formulario);
+			
+			$("#btnCrearModificar").click(function(){
+				var json = {
+						nombre: $("#txtnombre").val(),
+						apellido: $("#txtapellido").val(),
+						dni: $("#txtdni").val(),
+						fechaNacimiento: $("#txtnacimiento").val(),
+				}
+				// Si tenemos un id de empleado, es una modificacion
+				// en aso contrario es una creacion
+				if( $("#txtidEmpleado").val() ) modificar_empleado($("#txtidEmpleado").val(), json);
+				else crear_empleado(json)
+			})
+			
+			cargar_tabla_empleados();
+		</script>	
 	</body>
 </html>
