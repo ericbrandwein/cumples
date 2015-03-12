@@ -37,7 +37,4 @@ class EditController {
 		redirect(controller:'Mostrar', action:'index');
 		
 	}
-	
-	
-	
-	}
+}
