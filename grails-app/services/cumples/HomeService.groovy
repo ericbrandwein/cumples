@@ -1,6 +1,7 @@
 package cumples
 
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional
 class HomeService {

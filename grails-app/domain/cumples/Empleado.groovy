@@ -1,8 +1,8 @@
 package cumples
-import grails.rest.Resource
-@Resource(uri= "/empleadosLista")
+//import grails.rest.Resource
 
-	class Empleado {
+//@Resource(uri= "/empleadosLista")
+class Empleado {
 	String nombre;
 	String apellido;
 	String dni;
