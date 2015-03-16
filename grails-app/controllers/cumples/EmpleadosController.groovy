@@ -14,7 +14,8 @@ class EmpleadosController {
 			def dia=params.dia;
 			def mes=params.mes;
 			def anio=params.anio;
-		
+
+			def role=params.role;
 			Empleado e1= new Empleado(nombre: nombre, apellido: apellido, dni: dni, fechaNacimiento: Date.parse("dd-MM-yyyy", dia+"-"+mes+"-"+anio));
 			e1.save(failOnError:true);
 			flash.message="success";
@@ -24,6 +25,5 @@ class EmpleadosController {
 			flash.message="error";
 			redirect(action:'index');
 		}
-		
 	}
 }
