@@ -3,7 +3,7 @@ import java.util.List;
 import security.*
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured(['ROLE_ADMIN'])
+@Secured(['permitAll'])
 class HomeController {
 	def homeService; //para usar el servicio
 	

@@ -1,7 +1,9 @@
-
 package cumples
 import cumples.Regalo;
+import security.*
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured(['ROLE_ADMIN'])
 class SearchRegaloController {
 
     def index() {

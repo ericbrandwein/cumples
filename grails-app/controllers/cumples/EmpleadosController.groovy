@@ -1,5 +1,8 @@
 package cumples
+import security.*
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured(['ROLE_ADMIN'])
 class EmpleadosController {
 
     def index() { 
