@@ -11,6 +11,8 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 
+	static belongsTo=[empresa:Empresa]
+
 	static transients = ['springSecurityService']
 
 	static constraints = {

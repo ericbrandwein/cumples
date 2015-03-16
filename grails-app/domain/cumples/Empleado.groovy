@@ -1,13 +1,14 @@
 package cumples
+import security.*
 //import grails.rest.Resource
 
 //@Resource(uri= "/empleadosLista")
 class Empleado {
-	String nombre;
-	String apellido;
-	String dni;
-	Date fechaNacimiento;
+	String nombre
+	String apellido
+	String dni
+	Date fechaNacimiento
 	
-	
-	static hasMany=[regalos: Regalo];
+	static belongsTo=[empresa:Empresa]
+	static hasMany=[regalos: Regalo]
 }
