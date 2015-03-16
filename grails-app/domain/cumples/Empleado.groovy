@@ -11,4 +11,9 @@ class Empleado {
 	
 	static belongsTo=[empresa:Empresa]
 	static hasMany=[regalos: Regalo]
+
+	static constraints={
+		empresa nullable:true
+		regalos nullable:true
+	}
 }

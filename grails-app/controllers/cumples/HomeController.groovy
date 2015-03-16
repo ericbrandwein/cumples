@@ -8,7 +8,7 @@ class HomeController {
 	def homeService; //para usar el servicio
 	
 	def index() {
-		[listaEmpleados: homeService.cumplenHoy((new Date().getDate()), (new Date().getMonth()+1))];
+		[listaEmpleados: homeService.cumplenHoy((new Date().getDate()), (new Date().getMonth()+1),params.empresa)];
 	}
 	
 	
