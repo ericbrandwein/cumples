@@ -10,9 +10,14 @@ class AdminController {
 	}
 	
 	def agregar() {
-			def admin = new User(username: params.username, password: params.password);
-			admin.save(failOnError:true);
-			flash.message = "success";
-			redirect(action:'index');
+			def empresa=Empresa.findByNombre(params.empresa)
+			if(empresa==null){
+				empresa= new Empresa(nombre:params.empresa)
+			}
+			def admin = new User(username: params.username, password: params.password)
+			empresa.addToAdministradores(admin)
+			admin.save(failOnError:true)
+			flash.message = "success"
+			redirect(action:'index')
 	}
 }

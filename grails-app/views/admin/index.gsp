@@ -29,7 +29,7 @@
             				<li><a href="http://localhost:8080/cumples/envioMail/index">Verificar precios</a></li>
           				</ul>
           				 <ul class="nav navbar-nav navbar-right">
-          				 <li class="active"> <a class="navbar-brand" href="http://localhost:8080/cumples/empleados/index">Registrar empleados</a> </li></ul>
+          				 <li class="active"> <a class="navbar-brand" href="http://localhost:8080/cumples/admin/index">Registrar administradores</a> </li></ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li>
                       <g:link controller='logout' action=''>Logout</g:link>
@@ -40,8 +40,8 @@
     		</nav><br><br>
     		
     		<div class="starter-template">
-        		<h1 style="text-align:center; color: #000;"><span class="label label-success">Registre un empleado</span></h1>
-        		<h3 style="text-align:center; color: #000;" class="lead"><span class="label label-success">Ingresa nombre, apellido y fecha de nacimiento del nuevo empleado.</span></h3>
+        		<h1 style="text-align:center; color: #000;"><span class="label label-success">Registre un administrador</span></h1>
+        		<h3 style="text-align:center; color: #000;" class="lead"><span class="label label-success">Ingresa nombre de usuario, contraseña y empresa del nuevo administrador.</span></h3>
       		</div><br>
       		
       		<div class="container" style="width:30%">
@@ -54,7 +54,11 @@
 	    				<input type="password" name="password" id="password" class="form-control" onKeyUp="chText()2" onKeyDown="chText()2" placeholder="Password"  required>
   					</div><br><br>
 					
-					<div class="container" style="width:85%">
+            <div class="form-group">
+              <input type="text" name="empresa" id="empresa" class="form-control" onKeyUp="chText()" onKeyDown="chText()" placeholder="Empresa" required>
+            </div><br><br>
+
+					<div class="container" style="width:100%">
 						<div><input type="submit"  class="btn btn-warning" value="Agregar Administrador" name="ok" onClick="validarDatos()" /></div>
 					</div>
 				</g:form>
