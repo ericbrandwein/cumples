@@ -36,6 +36,14 @@
  			<div class="starter-template">
         		<h1 style="text-align:center; color: #000;"> <span class="label label-success">Cumpleaños del día</span></h1>
         		<h3 style="text-align:center; color: #000;" class="lead"> </h3>
+        		<g:select class="form-control" style="width: 300px; margin: auto;" name="empresas"
+				          from="${ empresas }"
+				          noSelection="${['null':'Seleccione una empresa']}"
+				          value="${ empresa }"
+				          optionKey="id"
+				          optionValue="nombre"
+				          id="cambiarEmpresa"
+				/>
       		</div><br>
 		<div class="container" style="width:85%;">
 			<g:each in="${listaEmpleados}"  var="empleado"> 
@@ -43,6 +51,7 @@
 						<h2> ${empleado.nombre}&nbsp;${empleado.apellido}</h2>
 						<h4>D.N.I.: ${empleado.dni}</h4>
 						<h4> Fecha nacimiento: ${empleado.fechaNacimiento.date} / ${empleado.fechaNacimiento.month +1} / ${empleado.fechaNacimiento.year+1900}</h4>
+						<h4> Empresa: ${ empleado.empresa.nombre }</h4>
 						<g:form controller="SearchRegalo" method="post" action="index">
 							<input type="hidden" name="idEmpleado" value="${empleado.id}" />
 							<div style="float: left">
@@ -87,7 +96,17 @@
 				</div>	
 	</g:each>
 </div>
-	
-
+	<script>
+	$(document).ready(function() {
+	    $('select.cambiarEmpresa').change(function(){
+	        $.ajax({
+	                type: 'get',
+	                success: function(data){
+	                	alert(a);
+	                }
+	         });
+	    });
+	});
+	</script>
 </body>
 </html>
