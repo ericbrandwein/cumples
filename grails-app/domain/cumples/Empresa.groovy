@@ -1,5 +1,5 @@
-package security
-import cumples.*
+package cumples
+import security.*
 
 class Empresa {
 	String nombre
