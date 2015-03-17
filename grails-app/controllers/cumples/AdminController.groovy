@@ -6,7 +6,8 @@ import grails.plugin.springsecurity.annotation.Secured
 class AdminController {
 
     def index() { 
-		
+		def lista = Empresa.list()
+		[lista:lista]
 	}
 	
 	def agregar() {
