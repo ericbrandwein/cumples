@@ -29,6 +29,8 @@
           				</ul>
           				 <ul class="nav navbar-nav navbar-right">
           				 <li> <a href="http://localhost:8080/cumples/empleados/index">Registrar empleados</a> </li>
+
+          				 <li> <a href="http://localhost:8080/cumples/admin/index">Registrar administrador</a> </li>
           				 <sec:ifLoggedIn>
           				 	<li class="active">
           				 		<form name="logout" method="POST" action="${createLink(controller:'logout') }"> 

@@ -28,8 +28,7 @@
           					<li><a href="http://localhost:8080/cumples/mostrar/index">Empleados</a></li>
             				<li><a href="http://localhost:8080/cumples/envioMail/index">Verificar precios</a></li>
           				</ul>
-          				 <ul class="nav navbar-nav navbar-right">
-          				 <li class="active"> <a class="navbar-brand" href="http://localhost:8080/cumples/admin/index">Registrar administradores</a> </li></ul>
+          				 
                   <ul class="nav navbar-nav navbar-right">
                   <sec:ifLoggedIn>
                     <li class="active">
