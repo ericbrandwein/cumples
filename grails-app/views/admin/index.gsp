@@ -30,6 +30,11 @@
           				</ul>
           				 <ul class="nav navbar-nav navbar-right">
           				 <li class="active"> <a class="navbar-brand" href="http://localhost:8080/cumples/empleados/index">Registrar empleados</a> </li></ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li>
+                      <g:link controller='logout' action=''>Logout</g:link>
+                    </li>
+                  </ul>
           			</div>
       			</div>
     		</nav><br><br>

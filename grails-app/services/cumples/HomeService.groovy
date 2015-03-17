@@ -10,7 +10,7 @@ class HomeService {
     def serviceMethod() {}
 	
 	def cumplenHoy(dia, mes, empresa){
-		def lista = Empresa.findByNombre(empresa.toString()).empleados;
+		def lista = Empleado.list();
 		def listaEmpleados= [];
 		for(int i=0; i<=(lista.size())-1; i++){
 			if ((lista[i].fechaNacimiento.getMonth()+1)==mes){

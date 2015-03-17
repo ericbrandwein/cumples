@@ -1,4 +1,5 @@
 package security
+import cumples.*
 
 class User {
 

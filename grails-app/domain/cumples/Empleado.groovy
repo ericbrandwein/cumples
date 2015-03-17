@@ -1,5 +1,4 @@
 package cumples
-import security.*
 //import grails.rest.Resource
 
 //@Resource(uri= "/empleadosLista")
