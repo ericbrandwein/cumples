@@ -6,6 +6,13 @@ class BootStrap {
 
 
     def init = { servletContext ->
+		def superAdminRole = new Role(authority: 'ROLE_SUPERADMIN').save(flush: true) 
+		def superAdmin = new User(username: 'itsover', password: '9000')
+		superAdmin.save(flush: true)
+		UserRole.create (superAdmin, superAdminRole, true)
+		superAdmin.validate()
+		println superAdmin.errors
+
     	def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true) 
     	def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
 
