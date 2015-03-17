@@ -43,7 +43,7 @@
 				          optionKey="id"
 				          optionValue="nombre"
 				          id="cambiarEmpresa"
-				/>
+				          onChange="cambiarEmpresa(this.value)" />
       		</div><br>
 		<div class="container" style="width:85%;">
 			<g:each in="${listaEmpleados}"  var="empleado"> 
@@ -96,17 +96,20 @@
 				</div>	
 	</g:each>
 </div>
-	<script>
-	$(document).ready(function() {
-	    $('select.cambiarEmpresa').change(function(){
-	        $.ajax({
-	                type: 'get',
-	                success: function(data){
-	                	alert(a);
-	                }
-	         });
-	    });
-	});
-	</script>
 </body>
 </html>
+
+<script>
+
+		function cambiarEmpresa(empresa){
+			$.ajax({
+				type: 'GET',
+				dataType: 'JSON',
+				url: "${ createLink(controller: 'home', action: 'listaEmpleadosEmpresa') }",
+				success: function(data) {
+					console.log("hola");
+				}
+			});
+		}
+
+	</script>

@@ -2,7 +2,7 @@ package cumples
 import java.util.List;
 import security.*
 import grails.plugin.springsecurity.annotation.Secured
-
+import grails.converters.*
 @Secured(['permitAll'])
 class HomeController {
 	def homeService; //para usar el servicio
@@ -12,7 +12,7 @@ class HomeController {
 	}
 
 	def listaEmpleadosEmpresa(){
-		[listaEmpleados: homeService.cumplenHoy((new Date().getDate()), (new Date().getMonth()+1)), empresa: params.empresa];
+		render( Empleado.list() ) as JSON
 	}
 	
 	
