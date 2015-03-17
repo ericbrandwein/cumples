@@ -2,7 +2,7 @@ package cumples
 import security.*
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured(['ROLE_ADMIN'])
+@Secured(['ROLE_SUPERADMIN'])
 class AdminController {
 
     def index() { 
