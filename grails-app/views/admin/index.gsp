@@ -31,10 +31,18 @@
           				 <ul class="nav navbar-nav navbar-right">
           				 <li class="active"> <a class="navbar-brand" href="http://localhost:8080/cumples/empleados/index">Registrar empleados</a> </li></ul>
                   <ul class="nav navbar-nav navbar-right">
-                    <li>
-                      <g:link controller='logout' action=''>Logout</g:link>
-                    </li>
-                  </ul>
+                  <sec:ifLoggedIn>
+                    <li class="active">
+                      <form name="logout" method="POST" action="${createLink(controller:'logout') }"> 
+
+                  <button type="submit" class="navbar-brand" style="border: 0 none;background-color:black">
+                     Logout
+                  </button>
+
+                      </form>
+                      </li>
+
+                  </sec:ifLoggedIn></ul>
           			</div>
       			</div>
     		</nav><br><br>

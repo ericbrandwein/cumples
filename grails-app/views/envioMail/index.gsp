@@ -26,7 +26,20 @@
             				<li class="active"><a style="margin-left: 0px;" class="navbar-brand" href="http://localhost:8080/cumples/envioMail/index">Verificar precios</a></li>
           				</ul>
           				 <ul class="nav navbar-nav navbar-right">
-          				 <li><a href="http://localhost:8080/cumples/empleados/index">Registrar empleados</a> </li></ul>
+          				 <li><a href="http://localhost:8080/cumples/empleados/index">Registrar empleados</a> </li>
+                   <sec:ifLoggedIn>
+                    <li class="active">
+                      <form name="logout" method="POST" action="${createLink(controller:'logout') }"> 
+
+                  <button type="submit" class="navbar-brand" style="border: 0 none;background-color:black">
+                     Logout
+                  </button>
+
+                      </form>
+                      </li>
+
+                  </sec:ifLoggedIn>
+                  </ul>
           			</div>
       			</div>
     		</nav><br><br><br>
