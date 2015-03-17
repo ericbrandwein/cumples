@@ -42,12 +42,12 @@ class BootStrap {
 		fecha.setYear(1998)
 
 		def empleado1 = new Empleado(nombre: 'emp1', apellido: 'ape1', dni: '23314323', fechaNacimiento: fecha )
-		def regalo1 = new Regalo(urlRegalo: "aa", anioCumple: 2015)
+		def regalo1 = new Regalo(urlRegalo: "MLA548350598", anioCumple: 2015)
 		empleado1.save(flush: true, failOnError: true)
 		empleado1.addToRegalos(regalo1)
 		regalo1.save(flush: true)
-   		empresa2.addToEmpleados(empleado1)
-   		empresa2.save(flush: true)
+   		empresa1.addToEmpleados(empleado1)
+   		empresa1.save(flush: true)
    		//empresa2.addToAdministradores(testUser)
 		
     }

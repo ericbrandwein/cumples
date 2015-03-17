@@ -4,6 +4,7 @@ import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['ROLE_ADMIN'])
 class EmpleadosController {
+	def springSecurityService
 
     def index() { 
 		
@@ -11,7 +12,7 @@ class EmpleadosController {
 	
 	def agregarC(){
 		if(Empleado.findByDni(params.dni)==null){
-			def usuario = getCurrentUser()
+			def usuario = springSecurityService.currentUser
 			def nombre=params.nombre
 			def apellido=params.apellido
 			def dni=params.dni
@@ -27,7 +28,7 @@ class EmpleadosController {
 		}
 		else{
 			flash.message="error";
-			redirect(action:'index');
+			redirect(action:'index')
 		}
 	}
 }
