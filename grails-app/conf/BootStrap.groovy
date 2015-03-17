@@ -34,9 +34,6 @@ class BootStrap {
 		//def roleAdmin = Role.findByName('ROLE_ADMIN')
 		UserRole.create testUser2, roleAdmin, true
 
-		UserRole.create (testUser, adminRole, true)
-		UserRole.create (testUser2, adminRole, true)
-
 		
 
 		def fecha=new Date()
@@ -46,9 +43,9 @@ class BootStrap {
 
 		def empleado1 = new Empleado(nombre: 'emp1', apellido: 'ape1', dni: '23314323', fechaNacimiento: fecha )
 		def regalo1 = new Regalo(urlRegalo: "aa", anioCumple: 2015)
-		regalo1.save(flush: true)
-		empleado1.addToRegalos(regalo1)
 		empleado1.save(flush: true, failOnError: true)
+		empleado1.addToRegalos(regalo1)
+		regalo1.save(flush: true)
    		empresa2.addToEmpleados(empleado1)
    		empresa2.save(flush: true)
    		//empresa2.addToAdministradores(testUser)
