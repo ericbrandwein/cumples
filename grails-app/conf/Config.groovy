@@ -131,6 +131,8 @@ log4j.main = {
            'net.sf.ehcache.hibernate'
 }
 
+grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/'
 
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'security.User'

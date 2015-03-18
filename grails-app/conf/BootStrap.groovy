@@ -39,7 +39,7 @@ class BootStrap {
 		def fecha=new Date()
 		fecha.setDate(16)
 		fecha.setMonth(2)
-		fecha.setYear(1998)
+		fecha.setYear(98)
 
 		def empleado1 = new Empleado(nombre: 'emp1', apellido: 'ape1', dni: '23314323', fechaNacimiento: fecha )
 		def regalo1 = new Regalo(urlRegalo: "MLA548350598", anioCumple: 2015)

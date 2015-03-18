@@ -11,13 +11,15 @@ class AdminController {
 	}
 	
 	def agregar() {
-			def empresa=Empresa.findByNombre(params.empresa)
-			if(empresa==null){
+			println params.empresa
+			def empresa=Empresa.findById(params.empresa)
+			/*if(empresa==null){
 				empresa= new Empresa(nombre:params.empresa)
-			}
+				empresa.save()
+			}*/
 			def admin = new User(username: params.username, password: params.password)
+			admin.save()
 			empresa.addToAdministradores(admin)
-			admin.save(failOnError:true)
 			flash.message = "success"
 			redirect(action:'index')
 	}
